@@ -1,0 +1,18 @@
+membuat apk laravel & tailwindcss
+
+1. composer create-project laravel/laravel second-watch (diterminal)
+2. npm install -D tailwindcss postcss autoprefixer (diterminal)
+3. npx tailwindcss init -p (diterminal)
+4. masuk ke tailwind.config.js masukan kedalam konten script dibawahh ini
+  "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue"
+5.masuk ke app.css
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+6. npm run dev (diterminal)
+7. inputkan @vite('resources/css/app.css') pada html
+
+
+flowbite tailwind
