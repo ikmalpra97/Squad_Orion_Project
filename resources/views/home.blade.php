@@ -11,20 +11,20 @@
             <img src="img/pjkt.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="img/pjkt.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="duration-700 ease-in-out" data-carousel-item>
+            <img src="img/rajut.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="duration-700 ease-in-out" data-carousel-item>
+            <img src="img/strapwatch.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="duration-700 ease-in-out" data-carousel-item>
+            <img src="img/anyam.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="duration-700 ease-in-out" data-carousel-item>
+            <img src="img/fishtail.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
     </div>
     <!-- Slider indicators -->
@@ -195,5 +195,59 @@
     </div>
 </div>
 </div>
+
+<script>document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector('[data-carousel="slide"]');
+    const carouselItems = carousel.querySelectorAll('[data-carousel-item]');
+    const prevButton = carousel.querySelector('[data-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-carousel-next]');
+    const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
+
+    let currentIndex = 0;
+
+    const showSlide = (index) => {
+        carouselItems.forEach((item, i) => {
+            if (i === index) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+
+        indicators.forEach((indicator, i) => {
+            if (i === index) {
+                indicator.setAttribute('aria-current', 'true');
+            } else {
+                indicator.setAttribute('aria-current', 'false');
+            }
+        });
+    };
+
+    const goToSlide = (index) => {
+        if (index < 0) {
+            currentIndex = carouselItems.length - 1;
+        } else if (index >= carouselItems.length) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+        showSlide(currentIndex);
+    };
+
+    prevButton.addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+    });
+
+    nextButton.addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
+    });
+
+    indicators.forEach((indicator, i) => {
+        indicator.addEventListener('click', () => {
+            goToSlide(i);
+        });
+    });
+});
+ </script>
 
 @endsection
