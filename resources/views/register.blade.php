@@ -23,6 +23,16 @@
                 <a href="#" class="text-sm text-orange-600 hover:text-orange-700 hover:underline mb-6">Forgot your password?</a>
             </div> --}}
             <button class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Register</button>
+            <div class="flex justify-center">or</div>
+    <div class="mb-6 pt-3 rounded bg-gray-200">
+    <a href="#" class="block bg-gray-200 rounded w-full text-center text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-orange-600 transition duration-500 px-3 pb-3">
+        <img
+          src="img/googleicon.png"
+          alt="google"
+          class="inline mr-[6px]"
+          width="18px"
+        />Sign-in with Google</a>
+    </div>
         </form>
     </section>
 </main>
