@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Des 2023 pada 20.04
+-- Waktu pembuatan: 21 Des 2023 pada 18.34
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `checkout` (
   `id_user` int(10) NOT NULL,
-  `id_product` int(10) NOT NULL,
+  `id_produk` int(10) NOT NULL,
   `id_transaksi` int(10) NOT NULL,
   `nama_produk` varchar(20) NOT NULL,
   `deskripsi_produk` varchar(100) NOT NULL,
@@ -51,6 +51,7 @@ CREATE TABLE `produk` (
   `deskripsi_produk` varchar(100) NOT NULL,
   `image_produk` blob NOT NULL,
   `rating_produk` int(2) NOT NULL,
+  `stok_barang` int(10) NOT NULL,
   `create_at` datetime NOT NULL,
   `update_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -76,7 +77,10 @@ CREATE TABLE `user` (
 -- Indeks untuk tabel `checkout`
 --
 ALTER TABLE `checkout`
-  ADD PRIMARY KEY (`id_transaksi`);
+  ADD PRIMARY KEY (`id_transaksi`),
+  ADD UNIQUE KEY `id_user` (`id_user`),
+  ADD UNIQUE KEY `id_product` (`id_produk`),
+  ADD UNIQUE KEY `id_produk` (`id_produk`);
 
 --
 -- Indeks untuk tabel `produk`
@@ -89,6 +93,17 @@ ALTER TABLE `produk`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `checkout`
+--
+ALTER TABLE `checkout`
+  ADD CONSTRAINT `checkout_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `checkout_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
