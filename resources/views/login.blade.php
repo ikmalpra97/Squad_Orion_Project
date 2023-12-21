@@ -38,5 +38,6 @@
     <div class="max-w-lg mx-auto text-center mt-12 mb-6">
         <p class="text-black">Don't have an account? <a href="/register" class="font-bold hover:underline">Sign up</a>.</p>
     </div>
-
+    <ul>
+</ul>
    
