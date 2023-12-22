@@ -2,20 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\CheckoutController;
 
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+// Rute untuk otentikasi (login dan register)
+Route::get('/login', function () {
+    return view('login');
+})->name('login.view');
+
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
+// Rute untuk produk
+Route::get('/produks', [ProdukController::class, 'index']);
+Route::get('/produks/{id_produk}', [ProdukController::class, 'show']);
+
+// Rute untuk checkouts
+Route::get('/checkouts', [CheckoutController::class, 'index']);
+Route::get('/checkouts/{id_transaksi}', [CheckoutController::class, 'show']);
+Route::post('/checkouts', [CheckoutController::class, 'store']);
+Route::delete('/checkouts/{id_transaksi}', [CheckoutController::class, 'destroy']);
+
+// Rute lainnya
 Route::get('/', function () {
     return view('home');
 });
@@ -43,6 +51,7 @@ Route::get('/contact', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
 Route::get('/landingpage', function () {
     return view('landingpage');
 });

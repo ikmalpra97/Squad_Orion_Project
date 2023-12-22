@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\users;
+use App\Models\Users;
 class AuthController extends Controller
 {
     // ... methods for login, logout, etc.
