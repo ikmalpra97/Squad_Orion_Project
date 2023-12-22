@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Des 2023 pada 07.19
+-- Waktu pembuatan: 22 Des 2023 pada 15.35
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -112,6 +112,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id_user`, `nama`, `email`, `password`) VALUES
+(1, 'admin', 'admin@gmail.com', 'admin');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -164,22 +171,6 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `produks`
---
-ALTER TABLE `produks`
-  ADD CONSTRAINT `produks_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `checkouts` (`id_produk`);
-
---
--- Ketidakleluasaan untuk tabel `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `checkouts` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
