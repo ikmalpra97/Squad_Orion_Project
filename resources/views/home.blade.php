@@ -58,11 +58,11 @@
 <h1 class="grid justify-center font-bold mb-4 text-4xl">Our Product</h1>
 <div class="grid grid-cols-3 gap-4 max-w-4xl mx-auto ">
 <div class=" w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
+    <a href="/detailproduk">
         <img class="p-8 rounded-t-lg" src="img/anyam.png" alt="product image" />
     </a>
     <div class="px-5 pb-5">
-        <a href="#">
+        <a href="/detailproduk">
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
         </a>
         <div class="flex items-center mt-2.5 mb-5">
@@ -93,11 +93,11 @@
 </div>
 
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
+    <a href="/detailproduk">
         <img class="p-8 rounded-t-lg" src="img/rajut.jpg" alt="product image" />
     </a>
     <div class="px-5 pb-5">
-        <a href="#">
+        <a href="/detailproduk">
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
         </a>
         <div class="flex items-center mt-2.5 mb-5">
@@ -127,11 +127,11 @@
     </div>
 </div>
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
+    <a href="/detailproduk">
         <img class="p-8 rounded-t-lg" src="img/strapwatch.png" alt="product image" />
     </a>
     <div class="px-5 pb-5">
-        <a href="#">
+        <a href="/detailproduk">
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
         </a>
         <div class="flex items-center mt-2.5 mb-5">
@@ -161,11 +161,11 @@
     </div>
 </div>
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
+    <a href="/detailproduk">
         <img class="p-8 rounded-t-lg" src="img/fishtail.jpg" alt="product image" />
     </a>
     <div class="px-5 pb-5">
-        <a href="#">
+        <a href="/detailproduk">
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
         </a>
         <div class="flex items-center mt-2.5 mb-5">

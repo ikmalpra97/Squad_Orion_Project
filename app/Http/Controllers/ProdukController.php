@@ -33,14 +33,14 @@ class ProdukController extends Controller
         ]);
 
         // Simpan data ke database
-        Produk::create($validatedData);
+        Produks::create($validatedData);
 
         return redirect('/produk')->with('success', 'Produk berhasil ditambahkan'); // Redirect ke halaman produk setelah penyimpanan berhasil
     }
 
     public function destroy($id)
     {
-        $produk = Produk::findOrFail($id);
+        $produk = Produks::findOrFail($id);
         $produk->delete();
 
         return redirect('/produk')->with('success', 'Produk berhasil dihapus'); // Redirect ke halaman produk setelah penghapusan berhasil

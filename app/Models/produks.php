@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Produk extends Model
+class produks extends Model
 {
     protected $table = 'produks'; // Nama tabel dalam database
     protected $primaryKey = 'id_produk'; // Primary key dari tabel
-    public $timestamps = false; // Jika tidak menggunakan kolom timestamps
+    public $timestamps = true; // Jika tidak menggunakan kolom timestamps
 
     protected $fillable = [
         'nama_produk',
@@ -20,6 +20,6 @@ class Produk extends Model
         'created_at',
         'updated_at',
     ];
-
+    
     // ... (Method atau relasi lain jika diperlukan)
 }
